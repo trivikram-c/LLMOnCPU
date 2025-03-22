@@ -1,8 +1,9 @@
 # LLMOnCPU
-Study of deploying LLMs on CPUs 
-To run the code, please follow the following steps:
-1. Install packages
+Study of deploying LLMs on CPUs. We recommand run the notebook file in Colab.
+To run the script, please follow the following steps:
+## 1. Install packages
    run these commands in a virtual environment:
+   ```
    pip install -U "huggingface_hub[cli]"
    pip install llama-cpp-python
    pip install psutil
@@ -10,16 +11,16 @@ To run the code, please follow the following steps:
    pip install datasets
    pip install torch
    pip install transformers
-2. Log in to huggingface
+   ```
+## 2. Log in to huggingface
    After installing all the packages, run the following command:
-   huggingface-cli login
-3. Run the script
-   python gsm8k_test.py [-h] [--model MODEL] [--device DEVICE] [--quantization_scheme QUANTIZATION_SCHEME]
+   `huggingface-cli login`
+## 3. Run the script
+   `python gsm8k_test.py [-h] [--model MODEL] [--device DEVICE] [--quantization_scheme QUANTIZATION_SCHEME]
                      [--prompt PROMPT] [--limit LIMIT] [--latency_measure LATENCY_MEASURE] [--verbose VERBOSE]
-                     [--do_memory_profiling DO_MEMORY_PROFILING] [--memory_constrain MEMORY_CONSTRAIN]
-   evaluate on gsm8k
+                     [--do_memory_profiling DO_MEMORY_PROFILING] [--memory_constrain MEMORY_CONSTRAIN] `
 
-  options:
+  ### options:
     -h, --help            show this help message and exit
     --model MODEL         select the model. (default) 0 = Llama-3.2-1B-Instruct, 1 = Llama-3.2-3B-Instruct, 2 =
                           DeepSeek-R1-Distill-Qwen-1.5B
@@ -30,7 +31,7 @@ To run the code, please follow the following steps:
     --limit LIMIT         a float number between 0 and 1, indicating the percentage of the dataset to be used, or an
                           integer that indicates how many samples to use. Default is 1.0.
     --latency_measure LATENCY_MEASURE
-                          an integer, 0 means to measure the TTFT of the model, (default) 1 means to measure the total     generation
+                          an integer, 0 means to measure the TTFT of the model, (default) 1 means to measure the total   generation
                           time of the model
     --verbose VERBOSE     a boolean, whether to print the accuracy, total output token count, total generation time, and
                           TTFT. Default is True

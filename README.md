@@ -44,3 +44,6 @@ To run the script, please follow the following steps:
                           the memory constrain applied on the process in GB. If -1, no constrain is applied. Only valid
                           in linux platform. Default is -1.
    
+## 4. Check the results
+   When the run finishes, the results will be written into a json file. You can use ece226_plot.ipynb to see the results. Please modify the path and filename accordingly. 
+   In the results folder are the results of our experiments. The 12 files in the outer folder are all under hardware config 2, and the files in the inner folder are from config 3,4,5 based on their names: \_20\_ means config 3, \_16\_ means config 4, and \_6C12T\_ means config 5.
